@@ -1,0 +1,7 @@
+{
+  "name": "vegan-checker-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
