@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Search ingredients</ion-title>
+        <ion-title>Search</ion-title>
       </ion-toolbar>
     </ion-header>
     

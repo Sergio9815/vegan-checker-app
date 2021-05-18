@@ -4,14 +4,19 @@
     <ion-tabs @ionTabsWillChange="beforeTabChange" @ionTabsDidChange="afterTabChange">
       <ion-tab-bar slot="bottom">
 
-        <ion-tab-button tab="schedule" href="/views/home">
+        <ion-tab-button tab="home" href="/views/home">
           <ion-icon :icon="home"></ion-icon>
           <ion-label>Home</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="speakers" href="/views/scan">
-          <ion-icon :icon="aperture"></ion-icon>
+        <ion-tab-button tab="scan" href="/views/scan">
+          <ion-icon :icon="qrScanner"></ion-icon>
           <ion-label>Scan</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="settings" href="/views/settings">
+          <ion-icon :icon="cog"></ion-icon>
+          <ion-label>Settings</ion-label>
         </ion-tab-button>
 
       </ion-tab-bar>
@@ -21,7 +26,7 @@
 
 <script lang="ts">
 import { IonApp, IonRouterOutlet,  IonTabButton, IonTabs, IonTabBar   } from '@ionic/vue';
-import { aperture, home } from 'ionicons/icons';
+import { home, cog, qrScanner } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -34,7 +39,7 @@ export default defineComponent({
     IonTabBar
   },
   setup() {
-    return { aperture, home }
+    return { qrScanner, home, cog }
   }
 });
 </script>
