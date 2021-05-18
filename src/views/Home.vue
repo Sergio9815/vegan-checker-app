@@ -2,28 +2,29 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Blank</ion-title>
+        <ion-title>Search ingredients</ion-title>
       </ion-toolbar>
     </ion-header>
     
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
+          <ion-title size="large">Home</ion-title>
         </ion-toolbar>
       </ion-header>
     
       <div id="container">
-        <strong>Ready to create an app?</strong>
+        <strong>Search ingredients</strong>
+        <ion-searchbar animated></ion-searchbar>
         <p>La soya es vegana: {{ consulta }}</p>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSearchbar } from '@ionic/vue';
+// import { arrowBack } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 import request from "../api/request"
 
@@ -34,7 +35,8 @@ export default defineComponent({
     IonHeader,
     IonPage,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    IonSearchbar
   },
   computed: {
     consulta() {
@@ -48,7 +50,7 @@ export default defineComponent({
 <style scoped>
 #container {
   text-align: center;
-  
+
   position: absolute;
   left: 0;
   right: 0;
