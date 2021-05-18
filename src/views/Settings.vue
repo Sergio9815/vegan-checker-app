@@ -1,76 +1,31 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
-      <ion-toolbar>
+    <ion-header>
+      <ion-toolbar color="secondary">
         <ion-title>Settings</ion-title>
       </ion-toolbar>
     </ion-header>
-    
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Settings</ion-title>
-        </ion-toolbar>
-      </ion-header>
-    
-      <div id="container">
-      
-      </div>
-    </ion-content>
+    <ion-content class="ion-padding">Hello World</ion-content>
   </ion-page>
 </template>
 
-
 <script lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-// import { arrowBack } from 'ionicons/icons';
+import { 
+  IonContent, 
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar
+} from '@ionic/vue';
 import { defineComponent } from 'vue';
-import request from "../api/request"
 
 export default defineComponent({
-  name: 'Settings',
   components: {
-    IonContent,
+    IonContent, 
     IonHeader,
     IonPage,
     IonTitle,
-    IonToolbar,
-  },
-  computed: {
-    consulta() {
-      return request.checkList(['soy'])
-    },
-  },
-
+    IonToolbar
+  }
 });
 </script>
-
-<style scoped>
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  
-  color: #8c8c8c;
-  
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-</style>

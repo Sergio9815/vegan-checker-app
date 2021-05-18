@@ -1,18 +1,12 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
-      <ion-toolbar>
+    <ion-header >
+      <ion-toolbar color="secondary">
         <ion-title>Search</ion-title>
       </ion-toolbar>
     </ion-header>
     
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Home</ion-title>
-        </ion-toolbar>
-      </ion-header>
-    
+    <ion-content color="secondary" :fullscreen="true">    
       <div id="container">
         <strong>Search ingredients</strong>
         <ion-searchbar animated></ion-searchbar>
@@ -47,14 +41,18 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style>
 #container {
   text-align: center;
-
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
+  top: 52%;
+  margin: auto;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  width: 100%;
+  height: 83%;
+  background-color: #fff;
+  color: var(--ion-color-secondary);
   transform: translateY(-50%);
 }
 
@@ -75,4 +73,10 @@ export default defineComponent({
 #container a {
   text-decoration: none;
 }
+
+ion-title{
+  color: var(--ion-color-success);
+  font-weight: bold;
+}
+
 </style>
