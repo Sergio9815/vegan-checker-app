@@ -1,12 +1,12 @@
 <template>
   <ion-page>
-    <ion-header >
+    <ion-header class="ion-no-border">
       <ion-toolbar color="secondary">
         <ion-title>Search</ion-title>
       </ion-toolbar>
     </ion-header>
     
-    <ion-content color="secondary" :fullscreen="true">    
+    <ion-content :fullscreen="true">    
       <div id="container">
         <strong>Search ingredients</strong>
         <ion-searchbar animated></ion-searchbar>
@@ -51,8 +51,7 @@ export default defineComponent({
   border-top-left-radius: 30px;
   width: 100%;
   height: 83%;
-  background-color: #fff;
-  color: var(--ion-color-secondary);
+  color: white;
   transform: translateY(-50%);
 }
 

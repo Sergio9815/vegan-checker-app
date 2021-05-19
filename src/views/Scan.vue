@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <ion-header>
+    <ion-header class="ion-no-border">
       <ion-toolbar color="secondary">
         <ion-title>Scan</ion-title>
       </ion-toolbar>
