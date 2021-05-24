@@ -3,7 +3,7 @@
     <ion-content>
         <div class="container-bar" >
               <ion-tabs >
-              <ion-tab-bar slot="bottom" >
+              <ion-tab-bar color="dark" slot="bottom" >
 
                 <ion-tab-button tab="home" href="/tabs/home">
                   <ion-icon part="icon" :icon="home"/>

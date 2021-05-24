@@ -2,15 +2,19 @@
   <ion-page>
     <ion-header class="ion-no-border">
       <ion-toolbar color="secondary">
-        <ion-title>Search</ion-title>
+        <div class="toolbar">
+          <picture>
+            <img class="header-icon" src="@/assets/icons/iconmonstr-leaf-1-240.png" alt="">
+          </picture>
+          <ion-title>SEARCH</ion-title>
+        </div>
       </ion-toolbar>
     </ion-header>
     
-    <ion-content :fullscreen="true">    
-      <div id="container">
-        <strong>Search ingredients</strong>
+    <ion-content color="secondary" :fullscreen="true">    
+      <div id="container" >
         <ion-searchbar animated></ion-searchbar>
-        <p>La soya es vegana: {{ consulta }}</p>
+        <p>¡Identifica productos fácilmente!</p>
       </div>
     </ion-content>
   </ion-page>
@@ -42,40 +46,5 @@ export default defineComponent({
 </script>
 
 <style>
-#container {
-  text-align: center;
-  position: absolute;
-  top: 52%;
-  margin: auto;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
-  width: 100%;
-  height: 83%;
-  color: white;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  
-  color: #8c8c8c;
-  
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-ion-title{
-  color: var(--ion-color-success);
-  font-weight: bold;
-}
-
+@import '../styles/home.css';
 </style>
