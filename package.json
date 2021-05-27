@@ -5,11 +5,13 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "droid": "vue-cli-service build && ionic capacitor copy android",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@capacitor/android": "^2.4.7",
     "@capacitor/core": "2.4.7",
     "@ionic/vue": "^5.4.0",
     "@ionic/vue-router": "^5.4.0",

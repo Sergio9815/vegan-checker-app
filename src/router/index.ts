@@ -23,10 +23,10 @@ const routes: Array<RouteRecordRaw> = [
         path: 'scan',
         component: () => import('@/views/Scan.vue')
       },
-      {
-        path: 'settings',
-        component: () => import('@/views/Settings.vue')
-      }
+      // {
+      //   path: 'settings',
+      //   component: () => import('@/views/Settings.vue')
+      // }
     ]
   }
 ]

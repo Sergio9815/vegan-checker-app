@@ -15,10 +15,10 @@
                   <ion-label>Scan</ion-label>
                 </ion-tab-button>
 
-                <ion-tab-button tab="settings" href="/tabs/settings">
+                <!-- <ion-tab-button tab="settings" href="/tabs/settings">
                   <ion-icon part="icon" :icon="settings"/>
                   <ion-label>Settings</ion-label>
-                </ion-tab-button>
+                </ion-tab-button> -->
 
               </ion-tab-bar>
             </ion-tabs>

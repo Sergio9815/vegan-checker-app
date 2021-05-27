@@ -6,15 +6,17 @@
           <picture>
             <img class="header-icon" src="@/assets/icons/iconmonstr-leaf-1-240.png" alt="">
           </picture>
-          <ion-title>SEARCH</ion-title>
+          <ion-title class="header-title">SEARCH</ion-title>
         </div>
       </ion-toolbar>
     </ion-header>
     
     <ion-content color="secondary" :fullscreen="true">    
       <div id="container" >
-        <ion-searchbar animated></ion-searchbar>
+        <ion-searchbar placeholder="Buscar productos, ingredientes y más..." animated></ion-searchbar>
         <p>¡Identifica productos fácilmente!</p>
+        <icon class="search-icon" />
+        <button class="btn-search">SEARCH PRODUCT</button>
       </div>
     </ion-content>
   </ion-page>
@@ -22,7 +24,7 @@
 
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSearchbar } from '@ionic/vue';
-// import { arrowBack } from 'ionicons/icons';
+import icon from '../components/icon.vue'
 import { defineComponent } from 'vue';
 import request from "../api/request"
 
@@ -34,7 +36,8 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar,
-    IonSearchbar
+    IonSearchbar,
+    icon
   },
   computed: {
     consulta() {
