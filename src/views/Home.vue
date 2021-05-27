@@ -1,16 +1,22 @@
 <template>
   <ion-page>
-    <ion-header >
+    <ion-header class="ion-no-border">
       <ion-toolbar color="secondary">
-        <ion-title>Search</ion-title>
+        <div class="toolbar">
+          <picture>
+            <img class="header-icon" src="@/assets/icons/iconmonstr-leaf-1-240.png" alt="">
+          </picture>
+          <ion-title class="header-title">{{title}}</ion-title>
+        </div>
       </ion-toolbar>
     </ion-header>
     
     <ion-content color="secondary" :fullscreen="true">    
-      <div id="container">
-        <strong>Search ingredients</strong>
-        <ion-searchbar animated></ion-searchbar>
-        <p>La soya es vegana: {{ consulta }}</p>
+      <div id="container" >
+        <ion-searchbar v-model="value" placeholder="Buscar productos, ingredientes y más..." animated></ion-searchbar>
+        <p>¡Identifica productos fácilmente!</p>
+        <icon class="search-icon" />
+        <button @click="search()" class="btn-search">SEARCH PRODUCTS</button>
       </div>
     </ion-content>
   </ion-page>
@@ -18,7 +24,7 @@
 
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSearchbar } from '@ionic/vue';
-// import { arrowBack } from 'ionicons/icons';
+import icon from '../components/icon.vue'
 import { defineComponent } from 'vue';
 import request from "../api/request"
 
@@ -30,53 +36,27 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar,
-    IonSearchbar
+    IonSearchbar,
+    icon
   },
-  computed: {
-    consulta() {
-      return request.checkList(['soy'])
-    },
+
+  setup() {
+    return {
+      title: 'SEARCH',
+      value: '',
+    }
   },
+
+  methods: {
+    search: function() {
+      // alert(request.checkNoVegan(['soy', 'cacao butter', 'pork', 'beef', 'glycine']))
+      alert(request.containsNoV(this.value))
+    }
+  }
 
 });
 </script>
 
 <style>
-#container {
-  text-align: center;
-  position: absolute;
-  top: 52%;
-  margin: auto;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
-  width: 100%;
-  height: 83%;
-  background-color: #fff;
-  color: var(--ion-color-secondary);
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  
-  color: #8c8c8c;
-  
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-ion-title{
-  color: var(--ion-color-success);
-  font-weight: bold;
-}
-
+@import '../styles/home.css';
 </style>
