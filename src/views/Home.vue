@@ -16,7 +16,7 @@
         <ion-searchbar v-model="value" placeholder="Buscar productos, ingredientes y más..." animated></ion-searchbar>
         <p>¡Identifica productos fácilmente!</p>
         <icon class="search-icon" />
-        <button @click="search()" class="btn-search">SEARCH PRODUCT</button>
+        <button @click="search()" class="btn-search">SEARCH PRODUCTS</button>
       </div>
     </ion-content>
   </ion-page>
@@ -49,7 +49,8 @@ export default defineComponent({
 
   methods: {
     search: function() {
-      alert(request.checkList([this.value]))
+      // alert(request.checkNoVegan(['soy', 'cacao butter', 'pork', 'beef', 'glycine']))
+      alert(request.containsNoV(this.value))
     }
   }
 
