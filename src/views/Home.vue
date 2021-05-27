@@ -6,17 +6,17 @@
           <picture>
             <img class="header-icon" src="@/assets/icons/iconmonstr-leaf-1-240.png" alt="">
           </picture>
-          <ion-title class="header-title">SEARCH</ion-title>
+          <ion-title class="header-title">{{title}}</ion-title>
         </div>
       </ion-toolbar>
     </ion-header>
     
     <ion-content color="secondary" :fullscreen="true">    
       <div id="container" >
-        <ion-searchbar placeholder="Buscar productos, ingredientes y más..." animated></ion-searchbar>
+        <ion-searchbar v-model="value" placeholder="Buscar productos, ingredientes y más..." animated></ion-searchbar>
         <p>¡Identifica productos fácilmente!</p>
         <icon class="search-icon" />
-        <button class="btn-search">SEARCH PRODUCT</button>
+        <button @click="search()" class="btn-search">SEARCH PRODUCT</button>
       </div>
     </ion-content>
   </ion-page>
@@ -39,11 +39,19 @@ export default defineComponent({
     IonSearchbar,
     icon
   },
-  computed: {
-    consulta() {
-      return request.checkList(['soy'])
-    },
+
+  setup() {
+    return {
+      title: 'SEARCH',
+      value: '',
+    }
   },
+
+  methods: {
+    search: function() {
+      alert(request.checkList([this.value]))
+    }
+  }
 
 });
 </script>

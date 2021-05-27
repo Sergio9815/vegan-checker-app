@@ -6,7 +6,7 @@
           <picture>
             <img class="header-icon" src="@/assets/icons/iconmonstr-leaf-1-240.png" alt="">
           </picture>
-          <ion-title class="header-title">SCAN</ion-title>
+          <ion-title class="header-title">{{title}}</ion-title>
         </div>
       </ion-toolbar>
     </ion-header>
@@ -31,7 +31,7 @@ import icon from '../components/iconScan.vue'
 import { camera } from 'ionicons/icons';
 
 export default defineComponent({
-  name: 'Home',
+  name: 'Scan',
   components: {
     IonContent,
     IonHeader,
@@ -40,19 +40,26 @@ export default defineComponent({
     IonToolbar,
     icon
   },
+
   setup() {
-    return { camera }
+    return { 
+      camera,
+      title: 'SCAN',
+    }
   },
+
   computed: {
     consulta() {
       return request.checkList(['soy'])
     },
   },
+
   methods: {
     takePhoto: function() {
       alert('Take a photo')
     }
   }
+  
 });
 </script>
 
